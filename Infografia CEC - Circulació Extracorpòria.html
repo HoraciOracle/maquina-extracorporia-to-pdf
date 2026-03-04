@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografia CEC - Circulació Extracorpòria</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.4;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 5px solid #ff6b6b;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .section {
+            background: #f8f9ff;
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 6px solid #667eea;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .section-title {
+            color: #667eea;
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            font-size: 1.8em;
+        }
+
+        .funcions-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .funcions-list li {
+            background: white;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border-left: 4px solid #4CAF50;
+            font-weight: 500;
+        }
+
+        .circuit-diagram {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            border: 2px dashed #667eea;
+        }
+
+        .component {
+            background: #e3f2fd;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border-left: 4px solid #2196F3;
+            font-weight: 500;
+        }
+
+        .component strong {
+            color: #1565c0;
+        }
+
+        .comparacio-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparacio-table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .comparacio-table td {
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .comparacio-table tr:hover {
+            background: #f5f5f5;
+        }
+
+        .bomba-peristalta {
+            background: linear-gradient(90deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .bomba-centrifuga {
+            background: linear-gradient(90deg, #4ecdc4 0%, #44a08d 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .avantatges {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        .inconvenients {
+            color: #c62828;
+            font-weight: bold;
+        }
+
+        .oxigenador-box {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+            border-left: 4px solid #ff9800;
+        }
+
+        .oxigenador-box strong {
+            color: #e65100;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background: #f3e5f5;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #9c27b0;
+        }
+
+        .info-box strong {
+            color: #6a1b9a;
+        }
+
+        .alert-box {
+            background: #ffebee;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #c62828;
+            margin: 10px 0;
+        }
+
+        .alert-box strong {
+            color: #b71c1c;
+        }
+
+        .manteniment-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .manteniment-item {
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            border-top: 3px solid #667eea;
+        }
+
+        .manteniment-title {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .manteniment-item ul {
+            list-style-position: inside;
+            font-size: 0.9em;
+        }
+
+        .manteniment-item li {
+            margin: 4px 0;
+            color: #333;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .perfusionista-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .perfusionista-box h3 {
+            font-size: 1.4em;
+            margin-bottom: 12px;
+        }
+
+        .perfusionista-box ul {
+            list-style-position: inside;
+            line-height: 1.8;
+        }
+
+        .precaucions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .precaucio-item {
+            background: #e8f5e9;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid #4caf50;
+            font-size: 0.9em;
+        }
+
+        .temperature-alert {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #ff9800;
+            margin: 10px 0;
+            font-weight: 500;
+        }
+
+        .footer {
+            background: #f5f5f5;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .legenda {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .legenda-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9em;
+        }
+
+        .legenda-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+        }
+
+        @media (max-width: 1024px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            .grid-2col {
+                grid-template-columns: 1fr;
+            }
+            .manteniment-col {
+                grid-template-columns: 1fr;
+            }
+            .precaucions-grid {
+                grid-template-columns: 1fr;
+            }
+            .legenda {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🫀 CIRCULACIÓ EXTRACORPÒRIA (CEC)</h1>
+            <p>Infografia Completa del Sistema Cardiopulmonar</p>
+        </div>
+
+        <div class="content">
+            <!-- FUNCIONS PRINCIPALS -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="icon">⚙️</span>
+                    Funcions Principals
+                </div>
+                <ul class="funcions-list">
+                    <li>✓ Mantenir circulació sanguínia durant cor aturat</li>
+                    <li>✓ Permetre manipulació segura del cor</li>
+                    <li>✓ Assegurar sang oxigenada al sistema arterial</li>
+                    <li>✓ Regular flux i pressió sanguínia</li>
+                    <li>✓ Recuperar sang del camp quirúrgic</li>
+                    <li>✓ Administrar fàrmacs i fluids</li>
+                </ul>
+            </div>
+
+            <!-- PARTS PRINCIPALS DEL CIRCUIT -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="icon">🔄</span>
+                    Parts del Circuit Extracorpòric
+                </div>
+                <div class="circuit-diagram">
+                    <strong style="color: #667eea; font-size: 1.1em;">FLUX DE LA SANG</strong>
+                    <div class="component">
+                        <strong>Cànules Venoses</strong><br>Extreuen sang desoxigenada (aurcula dreta)
+                    </div>
+                    <div class="component">
+                        <strong>Reservori Venós</strong><br>Recull i filtra la sang
+                    </div>
+                    <div class="component">
+                        <strong>Bomba</strong><br>Impulsa la sang (corró o centrífuga)
+                    </div>
+                    <div class="component">
+                        <strong>Oxigenador</strong><br>Oxigena i elimina CO₂
+                    </div>
+                    <div class="component">
+                        <strong>Intercanviador de Calor</strong><br>Controla temperatura
+                    </div>
+                    <div class="component">
+                        <strong>Cànula Arterial</strong><br>Retorna sang oxigenada (aorta)
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMPARACIÓ BOMBES -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="icon">🔧</span>
+                    Comparativa: Bombes de Corró vs Centrífugues
+                </div>
+                <table class="comparacio-table">
+                    <tr>
+                        <th>Característica</th>
+                        <th>Bomba Peristàltica</th>
+                        <th>Bomba Centrífuga</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Mecanisme</strong></td>
+                        <td>Comprensió de tub amb rodets</td>
+                        <td>Força centrífuga d'un rotor</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cost</strong></td>
+                        <td style="color: #2e7d32;"><strong>✓ Baix</strong></td>
+                        <td style="color: #c62828;"><strong>✗ Alt</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hemlisi</strong></td>
+                        <td style="color: #c62828;"><strong>✗ Alta</strong></td>
+                        <td style="color: #2e7d32;"><strong>✓ Baixa</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Embòlies gasoses</strong></td>
+                        <td style="color: #c62828;"><strong>✗ Major risc</strong></td>
+                        <td style="color: #2e7d32;"><strong>✓ Menor risc</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Estabilitat del flux</strong></td>
+                        <td>Pulsàtil</td>
+                        <td>Continu i estable</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Formació de bombolles</strong></td>
+                        <td style="color: #c62828;"><strong>✗ Freqüent</strong></td>
+                        <td style="color: #2e7d32;"><strong>✓ Rara</strong></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- OXIGENADORS -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="icon">💨</span>
+                    Tipus d'Oxigenadors
+                </div>
+                <div class="oxigenador-box">
+                    <strong>🔵 MEMBRANA (més habitual)</strong>
+                    <ul style="margin-top: 8px; margin-left: 15px;">
+                        <li>Membrana semipermeable (polipropilè o silicona)</li>
+                        <li>Intercanvi gassós com alvèols pulmonars</li>
+                        <li>Més segur en adults</li>
+                        <li>Menys hemlisi</li>
+                    </ul>
+                </div>
+                <div class="oxigenador-box" style="background: #e0f2f1; border-left-color: #00897b;">
+                    <strong style="color: #004d40;">🟢 BOMBOLLES</strong>
+                    <ul style="margin-top: 8px; margin-left: 15px; color: #004d40;">
+                        <li>Contacte directe sang-gas</li>
+                        <li>Utilització pediàtrica</li>
+                        <li>Major risc hemòlisi</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RESERVORI CARDIOTOMIA -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="icon">🏺</span>
+                    Reservori de Cardiotomia
+                </div>
+                <div class="info-box">
+                    <strong>Funcions Principals:</strong>
+                    <ul style="margin-top: 8px; margin-left: 15px;">
+                        <li>Recollir sang del camp quirúrgic</li>
+                        <li>Filtrar micro i macropartícules</li>
+                        <li>Eliminar bombolles d'aire</li>
+                        <li>Atrapar teixit i coàguls</li>
+                    </ul>
+                </div>
+                <div class="info-box" style="background: #fce4ec; border-left-color: #c2185b; margin-top: 10px;">
+                    <strong style="color: #880e4f;">Elements que es poden afegir:</strong>
+                    <ul style="margin-top: 8px; margin-left: 15px; color: #880e4f;">
+                        <li>Fàrmacs vasodilatadors i inotrópics</li>
+                        <li>Sang per transfusió</li>
+                        <li>Solucions cristaloides i coloides</li>
+                        <li>Anticoagulants</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- HIPOTÈRMIA -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="icon">❄️</span>
+                    Sistema de Hipotèrmia Terapèutica
+                </div>
+                <div class="info-box">
+                    <strong>Funcions:</strong>
+                    <ul style="margin-top: 8px; margin-left: 15px;">
+                        <li>Disminuir metabolisme celular</li>
+                        <li>Reduir consum d'oxigen dels teixits</li>
+                        <li>Protegir organs vitals (cervell, cor, ronyons)</li>
+                        <li>Tolerar millor la isquèmia</li>
+                    </ul>
+                </div>
+                <div class="temperature-alert">
+                    <strong>⚠️ LÍMITS DE TEMPERATURA:</strong><br>
+                    • Màxim: <span style="color: #e65100; font-size: 1.1em;"><strong>42°C</strong></span><br>
+                    • Gradient (entrada-sortida): <span style="color: #e65100; font-size: 1.1em;"><strong>&lt; 10°C</strong></span><br>
+                    • Rang operatiu: 28-32°C
+                </div>
+            </div>
+
+            <!-- PRECAUCIONS EMBÒLIES -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="icon">🚫</span>
+                    Precaucions contra Embòlies Gasoses
+                </div>
+                <div class="precaucions-grid">
+                    <div class="precaucio-item"><strong>✓</strong> Filtres d'aire en punts estratègics</div>
+                    <div class="precaucio-item"><strong>✓</strong> Desaireig previ del circuit</div>
+                    <div class="precaucio-item"><strong>✓</strong> Sistema de detecció automàtica</div>
+                    <div class="precaucio-item"><strong>✓</strong> Inspecció visual constant</div>
+                    <div class="precaucio-item"><strong>✓</strong> No buidar el reservori</div>
+                    <div class="precaucio-item"><strong>✓</strong> Control de temperatura gradual</div>
+                    <div class="precaucio-item"><strong>✓</strong> Vigilar pressió i sorolls</div>
+                    <div class="precaucio-item"><strong>✓</strong> Protocols de seguretat estrictes</div>
+                </div>
+                <div class="alert-box" style="margin-top: 15px;">
+                    <strong>⚠️ RISC CRÍTIC:</strong> Les embòlies gasoses poden provocar danys neurològics, AVC o mort
+                </div>
+            </div>
+
+            <!-- MANTENIMENT PREVENTIU -->
+            <div class="section full-width">
+                <div class="section-title">
+                    <span class="icon">🔧</span>
+                    Manteniment Preventiu (Stockert S5)
+                </div>
+                <div class="manteniment-col">
+                    <div class="manteniment-item">
+                        <div class="manteniment-title">📋 ABANS DE L'ÚS</div>
+                        <ul>
+                            <li>Verificar connexions elèctriques</li>
+                            <li>Autotest del sistema</li>
+                            <li>Comprovar rotació de bombes</li>
+                            <li>Revisar tubs i cànules</li>
+                            <li>Controlar monitoratge</li>
+                            <li>Purgar circuit sense aire</li>
+                            <li>Test de bombolles</li>
+                        </ul>
+                    </div>
+                    <div class="manteniment-item">
+                        <div class="manteniment-title">🧹 DESPRÉS DE L'ÚS</div>
+                        <ul>
+                            <li>Desmuntar material desechable</li>
+                            <li>Netejar amb productes específics</li>
+                            <li>Comprovar absència de residus</li>
+                            <li>Revisar incidents o errors</li>
+                            <li>Mode espera o apagat</li>
+                            <li>Registre de manteniment</li>
+                            <li>Programar revisions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BIOCOMPATIBILITAT -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="icon">🧬</span>
+                    Biocompatibilitat dels Materials
+                </div>
+                <div class="info-box">
+                    <strong>Materials Utilitzats:</strong>
+                    <ul style="margin-top: 8px; margin-left: 15px;">
+                        <li><strong>PVC, Silicona, Poliuretà</strong></li>
+                        <li>Testats per evitar reaccions adverses</li>
+                        <li>Revestiment amb heparina</li>
+                        <li>Minimitza activació de coagulació</li>
+                        <li>Evita hemlisi i citotoxicitat</li>
+                    </ul>
+                </div>
+                <div class="info-box" style="background: #e0f2f1; border-left-color: #00897b; margin-top: 10px;">
+                    <strong style="color: #004d40;">Normatives de Qualitat:</strong>
+                    <ul style="margin-top: 8px; margin-left: 15px; color: #004d40;">
+                        <li><strong>ISO 10993</strong> - Proves de biocompatibilitat</li>
+                        <li><strong>Normes CE</strong> - Certificació europea</li>
+                        <li>Esterilització garantida</li>
+                        <li>Material d'un sol ús</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ROL DEL PERFUSIONISTA -->
+            <div class="section full-width">
+                <div class="perfusionista-box">
+                    <h3>👨‍⚕️ ROL DEL PERFUSIONISTA</h3>
+                    <p style="margin-bottom: 12px;">Professional sanitari especialitzat clau dins l'equip quirúrgic de cirurgia cardaca</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div>
+                            <strong style="font-size: 1.1em; display: block; margin-bottom: 8px;">Responsabilitats:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Posar en marxa i controlar la CEC</li>
+                                <li>Supervisar durant tota l'operació</li>
+                                <li>Garantir perfusió adequada i segura</li>
+                                <li>Mantenir comunicació amb cirurgià i anestesista</li>
+                                <li>Resoldre imprevistos amb rapidesa</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong style="font-size: 1.1em; display: block; margin-bottom: 8px;">Competències Requides:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Anatomia i fisiologia cardiovascular</li>
+                                <li>Farmacologia i bioquímica</li>
+                                <li>Interpretació de paràmetres fisiològics</li>
+                                <li>Coneixement de tots els components CEC</li>
+                                <li>Gasometria i hematòcrit</li>
+                                <li>Reacció ràpida a emergències</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEGENDA COLORS -->
+            <div class="section full-width">
+                <div class="legenda">
+                    <div class="legenda-item">
+                        <div class="legenda-color" style="background: #4CAF50;"></div>
+                        <span>Informació positiva / Avantatges</span>
+                    </div>
+                    <div class="legenda-item">
+                        <div class="legenda-color" style="background: #c62828;"></div>
+                        <span>Riscos / Inconvenients</span>
+                    </div>
+                    <div class="legenda-item">
+                        <div class="legenda-color" style="background: #667eea;"></div>
+                        <span>Informació principal</span>
+                    </div>
+                    <div class="legenda-item">
+                        <div class="legenda-color" style="background: #ff9800;"></div>
+                        <span>Paràmetres crítics / Temperatura</span>
+                    </div>
+                    <div class="legenda-item">
+                        <div class="legenda-color" style="background: #2196F3;"></div>
+                        <span>Components del sistema</span>
+                    </div>
+                    <div class="legenda-item">
+                        <div class="legenda-color" style="background: #9c27b0;"></div>
+                        <span>Especificacions tècniques</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Infografia Educativa sobre Circulació Extracorpòria (CEC)</strong></p>
+            <p>Informació basada en literatura mèdica i protocols hospitalaris. | Material per a formació en Tecnologia Sanitària</p>
+            <p style="margin-top: 10px; opacity: 0.7;">© 2026 - Formació en Màquines Extracorpories</p>
+        </div>
+    </div>
+</body>
+</html>
